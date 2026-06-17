@@ -1,13 +1,10 @@
 import DashboardPreview from './DashboardPreview';
 
-const Hero = () => {
-  const avatars = [
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=1',
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=2',
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=3',
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=4',
-  ];
+interface HeroProps {
+  onGetStarted?: () => void;
+}
 
+const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Background glow */}
@@ -39,7 +36,7 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-4 mb-10">
-              <button className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-red-100 active:scale-95">
+              <button onClick={onGetStarted} className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-red-100 active:scale-95">
                 Get Started
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

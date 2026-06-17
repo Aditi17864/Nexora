@@ -1,6 +1,10 @@
 import { useState } from 'react';
 
-const Navbar = () => {
+interface NavbarProps {
+  onLoginClick?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onLoginClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -39,10 +43,10 @@ const Navbar = () => {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <button className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors px-4 py-2">
+          <button onClick={onLoginClick} className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors px-4 py-2">
             Log In
           </button>
-          <button className="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+          <button onClick={onLoginClick} className="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
             Get Started
           </button>
         </div>
@@ -71,8 +75,8 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex gap-3 pt-2">
-            <button className="text-sm font-medium border border-gray-200 px-4 py-2 rounded-lg">Log In</button>
-            <button className="bg-red-600 text-white text-sm font-semibold px-5 py-2 rounded-lg">Get Started</button>
+            <button onClick={onLoginClick} className="text-sm font-medium border border-gray-200 px-4 py-2 rounded-lg">Log In</button>
+            <button onClick={onLoginClick} className="bg-red-600 text-white text-sm font-semibold px-5 py-2 rounded-lg">Get Started</button>
           </div>
         </div>
       )}
