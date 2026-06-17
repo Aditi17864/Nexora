@@ -76,87 +76,7 @@ Axios
 ┌──────────────────▼──────────────────┐
 │            MongoDB Atlas            │  ← Database
 └─────────────────────────────────────┘
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- MongoDB Atlas account
-- Git
-
-### 1. Clone
-
-```bash
-git clone https://github.com/your-username/nexora.git
-cd nexora
-```
-
-### 2. Install Dependencies
-
-```bash
-# Frontend
-cd client && npm install
-
-# Backend
-cd ../server && npm install
-```
-
-### 3. Configure Environment
-
-Create a `.env` file inside the `server/` directory:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-```
-
-### 4. Run
-
-```bash
-# Start backend (from /server)
-npm run dev
-
-# Start frontend (from /client)
-npm run dev
-```
-
-Frontend → `http://localhost:5173`  
-Backend  → `http://localhost:5000`
-
----
-
-## Project Structure
-
-```
-nexora/
-├── client/
-│   └── src/
-│       ├── components/       # Reusable UI components
-│       ├── pages/            # Route-level views
-│       ├── layouts/          # Page layout wrappers
-│       ├── hooks/            # Custom React hooks
-│       ├── services/         # API call logic
-│       └── routes/           # Route definitions
-│
-├── server/
-│   └── src/
-│       ├── config/           # DB and environment setup
-│       ├── controllers/      # Request handlers
-│       ├── middleware/        # Auth, validation, error handling
-│       ├── models/           # Mongoose schemas
-│       ├── routes/           # API route definitions
-│       ├── services/         # Business logic
-│       └── utils/            # Helpers and utilities
-│
-└── README.md
-```
-
----
+``'
 
 ## User Roles
 
@@ -173,24 +93,6 @@ Committee Head
 Student Member
   └── Task view, event registration, announcements, participation tracking
 ```
-
----
-
-## Roadmap
-
-- [x] Authentication & Role Management
-- [x] Committee & Member Management
-- [x] Event Management
-- [x] Task Tracking (Kanban)
-- [ ] Attendance System
-- [ ] Analytics Dashboard
-- [ ] Certificate Generation
-- [ ] QR Attendance
-- [ ] AI Meeting Minutes
-- [ ] Smart Event Planner
-- [ ] Real-Time Notifications
-- [ ] Mobile Application
-
 ---
 
 ## Security
@@ -216,8 +118,6 @@ Pull requests are welcome. For major changes, open an issue first to discuss wha
 
 <div align="center">
 
-If Nexora helped you, consider giving it a ⭐ — it means a lot.
-
-Built with ❤️ using React, TypeScript, Express, and MongoDB
+Built with ❤️ love
 
 </div>
