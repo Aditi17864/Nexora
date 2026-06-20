@@ -1,30 +1,26 @@
-import jwt from "jsonwebtoken";
+import jwt, { Secret, SignOptions } from "jsonwebtoken";
 import { config } from "../config/environment";
 
 export const generateToken = (userId: string, role: string): string => {
-  return jwt.sign({ id: userId, role }, config.jwtSecret, {
-    expiresIn: config.jwtExpire,
-  });
+  return jwt.sign(
+    { id: userId, role },
+    config.jwtSecret as Secret,
+    { expiresIn: config.jwtExpire as SignOptions["expiresIn"] }
+  );
 };
 
 export const generateRefreshToken = (userId: string): string => {
-  return jwt.sign({ id: userId }, config.jwtRefreshSecret, {
-    expiresIn: config.jwtRefreshExpire,
-  });
+  return jwt.sign(
+    { id: userId },
+    config.jwtRefreshSecret as Secret,
+    { expiresIn: config.jwtRefreshExpire as SignOptions["expiresIn"] }
+  );
 };
 
 export const verifyToken = (token: string) => {
-  try {
-    return jwt.verify(token, config.jwtSecret);
-  } catch (error) {
-    throw new Error("Invalid or expired token");
-  }
+  return jwt.verify(token, config.jwtSecret as Secret);
 };
 
 export const verifyRefreshToken = (token: string) => {
-  try {
-    return jwt.verify(token, config.jwtRefreshSecret);
-  } catch (error) {
-    throw new Error("Invalid or expired refresh token");
-  }
+  return jwt.verify(token, config.jwtRefreshSecret as Secret);
 };

@@ -5,7 +5,7 @@ import { connectDB } from "./config/database";
 import { config } from "./config/environment";
 import { errorHandler } from "./middleware/errorHandler";
 
-// Import routes
+// Routes
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
 import committeeRoutes from "./routes/committees";
@@ -18,15 +18,15 @@ dotenv.config();
 
 const app = express();
 
+// Connect Database
+connectDB();
+
 // Middleware
 app.use(cors({ origin: config.corsOrigin }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect Database
-connectDB();
-
-// Routes
+// API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/committees", committeeRoutes);
@@ -35,17 +35,20 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/attendance", attendanceRoutes);
 app.use("/api/announcements", announcementRoutes);
 
-// Health check
+// Health Check
 app.get("/api/health", (req, res) => {
-  res.json({ status: "✅ Server is running", timestamp: new Date() });
+res.json({
+status: "Server Running",
+database: "Connected",
+timestamp: new Date(),
+});
 });
 
-// Error handling middleware
+// Error Handler
 app.use(errorHandler);
 
-// Start server
-const PORT = config.port;
+const PORT = config.port || 5000;
+
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📡 CORS enabled for: ${config.corsOrigin}`);
+console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
