@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/database";
+import { seedDatabase } from "./config/seed";
 import { config } from "./config/environment";
 import { errorHandler } from "./middleware/errorHandler";
 
@@ -20,6 +21,7 @@ const app = express();
 
 // Connect Database
 connectDB();
+seedDatabase();
 
 // Middleware
 app.use(cors({ origin: config.corsOrigin }));
