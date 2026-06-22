@@ -31,9 +31,13 @@ const DashboardPreview = () => {
         <div className="w-36 bg-red-600 flex flex-col py-4 shrink-0">
           <div className="px-4 mb-4 flex items-center gap-1">
             <div className="w-5 h-5 bg-white/20 rounded flex items-center justify-center">
-              <span className="text-white text-[10px]">N</span>
+              <svg width="16" height="18" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10L80 30L85 60L70 95L50 110L30 95L15 60L20 30Z" fill="white" />
+                <path d="M40 50L50 40L60 50L55 65L50 68L45 65Z" fill="#DC2626" />
+                <line x1="50" y1="20" x2="50" y2="35" stroke="#DC2626" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
             </div>
-            <span className="text-white font-bold text-sm">NEXORA</span>
+            <span className="text-white font-bold text-sm">Red Dy Patil</span>
           </div>
           <nav className="flex flex-col gap-0.5 px-2">
             {navItems.map((item) => (

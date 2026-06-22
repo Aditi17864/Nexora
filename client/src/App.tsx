@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import DashboardPreview from "./components/DashboardPreview";
 import LoginModal from "./components/LoginModal";
-import SuperAdminDashboard from "./components/Superadmindashboard";
+import RedDyPatilAdminDashboard from "./components/RedDyPatilAdminDashboard";
 import StudentDashboard from "./components/dashboards/StudentDashboard";
 import CommitteeHeadDashboard from "./components/dashboards/CommitteeHeadDashboard";
 
@@ -34,7 +34,7 @@ export default function App() {
 
   if (authUser) {
     if (authUser.role === "super_admin") {
-      return <SuperAdminDashboard user={authUser} onLogout={handleLogout} />;
+      return <RedDyPatilAdminDashboard user={authUser} onLogout={handleLogout} />;
     }
     if (authUser.role === "committee_head") {
       return <CommitteeHeadDashboard user={authUser} onLogout={handleLogout} />;

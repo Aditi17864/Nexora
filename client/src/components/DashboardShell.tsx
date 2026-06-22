@@ -45,10 +45,16 @@ export default function DashboardShell({
         <div className="p-4 flex items-center justify-between border-b border-white/10">
           <div className={`flex items-center gap-3 ${!sidebarOpen && "hidden"}`}>
             <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold">
-              N
+              <svg width="24" height="24" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10L80 30L85 60L70 95L50 110L30 95L15 60L20 30Z" fill="white" opacity="0.9" />
+                <path d="M40 50L50 40L60 50L55 65L50 68L45 65Z" fill="#DC2626" />
+                <line x1="50" y1="20" x2="50" y2="35" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+                <line x1="35" y1="28" x2="45" y2="38" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+                <line x1="65" y1="28" x2="55" y2="38" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </div>
             <div>
-              <h1 className="font-bold text-lg">NEXORA</h1>
+              <h1 className="font-bold text-lg">Red Dy Patil</h1>
               <p className="text-xs opacity-75">Committee Mgmt</p>
             </div>
           </div>

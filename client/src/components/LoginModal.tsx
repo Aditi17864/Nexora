@@ -75,11 +75,17 @@ export default function LoginModal({ onClose, onLogin }: LoginModalProps) {
         <div className="bg-gradient-to-r from-red-600 to-red-700 px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">N</span>
+              <svg width="24" height="28" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10L80 30L85 60L70 95L50 110L30 95L15 60L20 30Z" fill="white" />
+                <path d="M40 50L50 40L60 50L55 65L50 68L45 65Z" fill="#DC2626" />
+                <line x1="50" y1="20" x2="50" y2="35" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+                <line x1="35" y1="28" x2="45" y2="38" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+                <line x1="65" y1="28" x2="55" y2="38" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </div>
             <div>
               <h2 className="text-white font-bold text-xl">Welcome Back</h2>
-              <p className="text-red-100 text-sm">Sign in to NEXORA</p>
+              <p className="text-red-100 text-sm">Sign in to Red Dy Patil</p>
             </div>
           </div>
           <button onClick={onClose} className="text-white/80 hover:text-white transition-colors">

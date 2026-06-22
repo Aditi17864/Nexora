@@ -3,8 +3,7 @@ import type { AuthUser } from "../App";
 import DashboardShell from "./DashboardShell";
 import {
   LayoutDashboard, Calendar, CheckSquare, Users, Bell,
-  BarChart2, Award, Settings, Shield,
-  UserPlus, AlertCircle, Activity, Eye
+  BarChart2, Settings, Shield, UserPlus, AlertCircle, Activity, Eye
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -15,8 +14,28 @@ const NAV_ITEMS = [
   { icon: Users, label: "Attendance", id: "attendance" },
   { icon: Bell, label: "Announcements", id: "announcements" },
   { icon: BarChart2, label: "Analytics", id: "analytics" },
-  { icon: Award, label: "Certificates", id: "certificates" },
   { icon: Settings, label: "Settings", id: "settings" },
+];
+
+const SAMPLE_EVENTS = [
+  { date: "24", month: "MAY", name: "TechFest 2K25", org: "Technical Committee", time: "10:00 AM" },
+  { date: "31", month: "MAY", name: "AI Workshop", org: "AI & DS Committee", time: "02:00 PM" },
+  { date: "07", month: "JUN", name: "Cultural Night", org: "Cultural Committee", time: "06:00 PM" },
+];
+
+const SAMPLE_TASKS = [
+  { name: "Design Event Poster", pct: 75, color: "bg-blue-500" },
+  { name: "Finalize Sponsorships", pct: 60, color: "bg-green-500" },
+  { name: "Prepare Workshop Materials", pct: 40, color: "bg-yellow-400" },
+  { name: "Social Media Promotion", pct: 90, color: "bg-red-500" },
+];
+
+const SAMPLE_COMMITTEES = [
+  { name: "Technical Committee", members: 45, events: 8, status: "Active" },
+  { name: "Cultural Committee", members: 32, events: 5, status: "Active" },
+  { name: "AI & DS Committee", members: 28, events: 3, status: "Active" },
+  { name: "Sports Committee", members: 60, events: 12, status: "Active" },
+  { name: "Literary Committee", members: 22, events: 4, status: "Inactive" },
 ];
 
 const STATS = [
@@ -24,27 +43,6 @@ const STATS = [
   { label: "Upcoming Events", value: "12", sub: "In Next 30 Days", icon: Calendar, color: "blue" },
   { label: "Pending Tasks", value: "18", sub: "Tasks to complete", icon: CheckSquare, color: "green" },
   { label: "Active Members", value: "1,245", sub: "Across all committees", icon: Users, color: "orange" },
-];
-
-const EVENTS = [
-  { date: "24", month: "MAY", name: "TechFest 2K25", org: "Technical Committee", time: "10:00 AM" },
-  { date: "31", month: "MAY", name: "AI Workshop", org: "AI & DS Committee", time: "02:00 PM" },
-  { date: "07", month: "JUN", name: "Cultural Night", org: "Cultural Committee", time: "06:00 PM" },
-];
-
-const TASKS = [
-  { name: "Design Event Poster", pct: 75, color: "bg-blue-500" },
-  { name: "Finalize Sponsorships", pct: 60, color: "bg-green-500" },
-  { name: "Prepare Workshop Mate...", pct: 40, color: "bg-yellow-400" },
-  { name: "Social Media Promotion", pct: 90, color: "bg-red-500" },
-];
-
-const COMMITTEES = [
-  { name: "Technical Committee", members: 45, events: 8, status: "Active" },
-  { name: "Cultural Committee", members: 32, events: 5, status: "Active" },
-  { name: "AI & DS Committee", members: 28, events: 3, status: "Active" },
-  { name: "Sports Committee", members: 60, events: 12, status: "Active" },
-  { name: "Literary Committee", members: 22, events: 4, status: "Inactive" },
 ];
 
 const iconColor: Record<string, string> = {
@@ -109,7 +107,7 @@ export default function SuperAdminDashboard({ user, onLogout }: { user: AuthUser
                 <button className="text-red-600 text-sm font-medium hover:underline">View All</button>
               </div>
               <div className="space-y-3">
-                {EVENTS.map(ev => (
+                {SAMPLE_EVENTS.map(ev => (
                   <div key={ev.name} className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-red-600 rounded-xl flex flex-col items-center justify-center flex-shrink-0">
                       <span className="text-white font-bold text-sm leading-none">{ev.date}</span>
@@ -131,7 +129,7 @@ export default function SuperAdminDashboard({ user, onLogout }: { user: AuthUser
                 <button className="text-red-600 text-sm font-medium hover:underline">View All</button>
               </div>
               <div className="space-y-4">
-                {TASKS.map(task => (
+                {SAMPLE_TASKS.map(task => (
                   <div key={task.name}>
                     <div className="flex items-center justify-between mb-1.5">
                       <span className="text-sm text-gray-700 font-medium">{task.name}</span>
@@ -167,7 +165,7 @@ export default function SuperAdminDashboard({ user, onLogout }: { user: AuthUser
                   </tr>
                 </thead>
                 <tbody>
-                  {COMMITTEES.map(c => (
+                  {SAMPLE_COMMITTEES.map(c => (
                     <tr key={c.name} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
                       <td className="py-3 font-medium text-gray-900">{c.name}</td>
                       <td className="py-3 text-gray-500">{c.members}</td>

@@ -13,14 +13,17 @@ const Navbar: React.FC<NavbarProps> = ({ onLoginClick }) => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-              <path d="M12 12l9-5M12 12v10M12 12L3 7" stroke="white" strokeWidth="1.5" />
+            <svg width="20" height="24" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 10L80 30L85 60L70 95L50 110L30 95L15 60L20 30Z" fill="white" />
+              <path d="M40 50L50 40L60 50L55 65L50 68L45 65Z" fill="#DC2626" />
+              <line x1="50" y1="20" x2="50" y2="35" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+              <line x1="35" y1="28" x2="45" y2="38" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+              <line x1="65" y1="28" x2="55" y2="38" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </div>
           <div>
-            <div className="text-xl font-bold text-red-600 leading-none tracking-wide">NEXORA</div>
-            <div className="text-[9px] text-gray-400 tracking-widest uppercase">College Committee Management System</div>
+            <div className="text-xl font-bold text-red-600 leading-none tracking-wide">Red Dy Patil</div>
+            <div className="text-[9px] text-gray-400 tracking-widest uppercase">Committee Management</div>
           </div>
         </div>
 
